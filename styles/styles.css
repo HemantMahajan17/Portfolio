@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 0 20px;
+}
+/* Header styles */
+header {
+    background-color: #2774AE; /* Your preferred color */
+    color: #fff;
+    padding: 10px 10px; /* Added some horizontal padding */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    opacity: 1; /* Make sure the header is visible by default */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for showing and hiding */
+    pointer-events: auto; /* Allow interaction by default */
+}
+
+/* Show the header when the mouse is near the top */
+header.visible {
+    opacity: 1; /* Ensure the header is visible */
+    pointer-events: auto; /* Allow interaction when visible */
+}
+
+/* Hide the header when needed */
+header.hidden {
+    opacity: 0; /* Make the header invisible */
+    pointer-events: none; /* Prevent interaction when hidden */
+}
+
+/* Navigation styles */
+nav {
+    display: flex;
+    justify-content: center; /* Distribute items evenly */
+    align-items: center; /* Vertically center the items */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold; /* Added font weight for consistency */
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.resume-button {
+    display: inline-block;
+    padding: 10px 10px ;
+    margin-top: 0;
+    background-color: #5714b6; /* Your preferred color */
+    color: rgb(254, 254, 254);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease; /* Smooth transition */
+    position: relative;
+    overflow: hidden;
+}
+.resume-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(149, 57, 210, 0.866);
+    transition: all 0.5s ease;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 0;
+}
+.resume-button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+.resume-button:hover {
+    background-color: #91b4cf; /* Darker shade for hover effect */
+    color: #f3f3f3;
+}
+.resume-button span {
+    position: relative;
+    z-index: 1; /* Ensure text is above the pseudo-element */
+}
+
+
+
+/* Hero Section Styles */
+#hero {
+    background: url('images/hero-image.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-text {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.hero-text h1, .hero-text h2, .hero-text p {
+    color: #333;
+}
+
+.hero-text h1 {
+    font-size: 2.5em;
+}
+
+.hero-text h2 {
+    font-size: 1.8em;
+}
+
+.hero-text p {
+    font-size: 1.1em;
+    margin: 20px 0;
+}
+
+.hero-text .btn {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.hero-text .btn:hover {
+    background-color: #0056b3;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;  /* Optional: adds rounded corners */
+}
+
+/* About Me Section Styles */
+#about {
+    background-color: #f9f9f9;
+    padding: 50px;
+    text-align: left;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+#about h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#about h3 {
+    font-size: 1.8em;
+    color: #007BFF;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+#about p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.7;
+}
+
+#about ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#about ul li {
+    font-size: 1.1em;
+    color: #333;
+    background: none; /* left center no-repeat; Ensure this file exists */
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+
+/* Contact Section Styles */
+#contact {
+    background-color: #f4f4f4;
+    padding: 50px;
+    text-align: left;
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+#contact h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-info {
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Form Styles */
+.contact-form {
+    margin-top: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #eae5eb;
+    color: #0e0d0d;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-links ul, .footer-navigation ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li, .footer-navigation ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.footer-links a, .footer-navigation a, .footer-social a {
+    color: #070707;
+    text-decoration: none;
+}
+
+.footer-links a:hover, .footer-navigation a:hover, .footer-social a:hover {
+    text-decoration: underline;
+}
+
+.footer-info {
+    margin-bottom: 20px;
+}
+
+.footer-social a {
+    margin: 0 10px;
+    font-size: 1.2em;
+}
+
+
