@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Function to load page content
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to load page content via AJAX
     function loadPage(page) {
         console.log(`Loading page: ${page}`);  // Debugging log
         fetch(page)
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
             .catch(error => console.error('Error loading page:', error));
     }
 
-    // Event listeners for navigation
+    // Event listeners for navigation links
     document.querySelectorAll('nav a').forEach(link => {
         link.addEventListener('click', function(event) {
             event.preventDefault();
@@ -37,15 +37,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Load the current page on initial load (if user navigates directly to a specific page)
     loadPage(location.pathname === '/' ? 'index.html' : location.pathname);
+
+    // Handle header visibility based on cursor position
+    const header = document.querySelector('header');
+    document.addEventListener('mousemove', function(event) {
+        if (event.clientY <= 50) { // Adjust the value as needed
+            header.classList.add('visible');
+            header.classList.remove('hidden');
+        } else {
+            header.classList.add('hidden');
+            header.classList.remove('visible');
+        }
+    });
 });
 
-document.addEventListener('mousemove', function (event) {
-    const header = document.querySelector('header');
-    
-    // Check if the cursor is within 50px from the top of the screen
-    if (event.clientY < 50) {
-        header.classList.add('visible'); // Show the header
-    } else {
-        header.classList.remove('visible'); // Hide the header
-    }
-});
+// Function to toggle the menu visibility
+function toggleMenu() {
+    document.getElementById('navMenu').classList.toggle('show');
+}

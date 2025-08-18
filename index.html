@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hemant Mahajan - Portfolio</title>
+    <meta name="description" content="Hemant Mahajan's Portfolio - Software Developer with experience in machine learning and autonomous vehicles">
+    <title>Hemant Mahajan - Home</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
     <header>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
         <nav>
-            <ul>
+            <ul id="navMenu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="projects.html">Projects</a></li>
@@ -19,23 +21,21 @@
         </nav>
     </header>
     <main id="main-content">
-
-
-    <!-- Hero Section -->
-    <section id="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Hello, I'm Hemant Mahajan</h1>
-                <h2>I’m a Software Developer</h2>
-                <p>I am a recent graduate with strong technical skills in programming, algorithms, and data structures. With experience in segment labeling for autonomous vehicle projects, I am adept at ensuring high-quality data annotation for machine learning models. I am eager to apply my knowledge to dynamic projects, contribute to high-quality software development, and embrace continuous learning and teamwork.</p>
-                <a href="#projects" class="btn">See My Work</a>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hello, I'm Hemant Mahajan</h1>
+                    <h2>I’m a Software Developer</h2>
+                    <p>I am a recent graduate with strong technical skills in programming, algorithms, and data structures. With experience in segment labeling for autonomous vehicle projects, I am adept at ensuring high-quality data annotation for machine learning models. I am eager to apply my knowledge to dynamic projects, contribute to high-quality software development, and embrace continuous learning and teamwork.</p>
+                    <a href="#projects" class="btn">See My Work</a>
+                </div>
+                <div class="hero-image">
+                    <img src="images/hero-image.jpg" alt="Hemant Mahajan">
+                </div>
             </div>
-            <div class="hero-image">
-                <img src="images/hero-image.jpg" alt="Hemant Mahajan">
-            </div>
-        </div>
-    </section>
-
+        </section>
+    </main>
     <!-- Footer Section -->
     <footer>
         <div class="footer-content">
@@ -63,19 +63,6 @@
             </div>
         </div>
     </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>
-
-<script>
-    document.addEventListener('mousemove', function (event) {
-        const header = document.querySelector('header');
-        
-        if (event.clientY < 50) {
-            header.classList.add('visible');
-        } else {
-            header.classList.remove('visible');
-        }
-    });
-    </script>
-    </body>
-    

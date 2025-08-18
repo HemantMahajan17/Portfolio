@@ -1,52 +1,59 @@
+/* Reset styles */
 * {
     margin: 0;
-    padding: 0;
+    padding: 5px 10px;
     box-sizing: border-box;
 }
 
+/* Basic body and font settings */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     padding: 0 20px;
+    font-size: 16px; /* Default font size for larger screens */
 }
+
 /* Header styles */
 header {
     background-color: #2774AE; /* Your preferred color */
     color: #fff;
-    padding: 10px 10px; /* Added some horizontal padding */
+    padding: 10px 10px; /* Horizontal padding */
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    opacity: 1; /* Make sure the header is visible by default */
+    opacity: 1;
     transition: opacity 0.5s ease-in-out; /* Smooth transition for showing and hiding */
-    pointer-events: auto; /* Allow interaction by default */
+    pointer-events: auto;
 }
 
 /* Show the header when the mouse is near the top */
 header.visible {
-    opacity: 1; /* Ensure the header is visible */
-    pointer-events: auto; /* Allow interaction when visible */
+    opacity: 1;
+    pointer-events: auto;
 }
 
 /* Hide the header when needed */
 header.hidden {
-    opacity: 0; /* Make the header invisible */
-    pointer-events: none; /* Prevent interaction when hidden */
+    opacity: 0;
+    pointer-events: none;
 }
 
 /* Navigation styles */
 nav {
     display: flex;
-    justify-content: center; /* Distribute items evenly */
-    align-items: center; /* Vertically center the items */
+    justify-content: space-between; /* Space between nav items and resume button */
+    align-items: center; /* Center items vertically */
+    padding: 0 10px;
+    background-color: #2774AE; /* Background color to match header */
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    margin: 0;
+    justify-content: center; /* Center items horizontally */
     padding: 0;
+    margin: 0 ;
 }
 
 nav ul li {
@@ -56,26 +63,33 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-weight: bold; /* Added font weight for consistency */
+    font-weight: bold;
+    padding: 10px; /* Add padding to increase clickable area */
+    display: block; /* Ensure the link fills the padding area */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
 }
 
 nav ul li a:hover {
     text-decoration: underline;
+    background-color: #0056b3; /* Change to your desired hover color */
 }
 
+/* Resume button styles */
 .resume-button {
     display: inline-block;
-    padding: 10px 10px ;
+    padding: 10px 10px;
     margin-top: 0;
-    background-color: #5714b6; /* Your preferred color */
+
+    background-color: #5714b6;
     color: rgb(254, 254, 254);
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: all 0.3s ease; /* Smooth transition */
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
 }
+
 .resume-button::before {
     content: '';
     position: absolute;
@@ -89,19 +103,20 @@ nav ul li a:hover {
     transform: translate(-50%, -50%) scale(0);
     z-index: 0;
 }
+
 .resume-button:hover::before {
     transform: translate(-50%, -50%) scale(1);
 }
+
 .resume-button:hover {
-    background-color: #91b4cf; /* Darker shade for hover effect */
+    background-color: #91b4cf;
     color: #f3f3f3;
 }
+
 .resume-button span {
     position: relative;
-    z-index: 1; /* Ensure text is above the pseudo-element */
+    z-index: 1;
 }
-
-
 
 /* Hero Section Styles */
 #hero {
@@ -113,7 +128,6 @@ nav ul li a:hover {
     justify-content: space-between;
     align-items: center;
 }
-
 
 .hero-content {
     display: flex;
@@ -166,7 +180,7 @@ nav ul li a:hover {
 .hero-image img {
     max-width: 100%;
     height: auto;
-    border-radius: 10px;  /* Optional: adds rounded corners */
+    border-radius: 10px;
 }
 
 /* About Me Section Styles */
@@ -210,7 +224,7 @@ nav ul li a:hover {
 #about ul li {
     font-size: 1.1em;
     color: #333;
-    background: none; /* left center no-repeat; Ensure this file exists */
+    background: none;
     padding-left: 30px;
     margin-bottom: 10px;
 }
@@ -334,4 +348,64 @@ footer {
     font-size: 1.2em;
 }
 
+/* Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
 
+    header {
+        padding: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        display: none; /* Hide nav links by default on small screens */
+    }
+
+    nav ul.show {
+        display: flex; /* Show nav links when hamburger menu is clicked */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+}
+
+/* Flexbox example */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
+    flex: 1 1 200px;
+    margin: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

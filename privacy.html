@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hemant Mahajan - Portfolio</title>
@@ -9,8 +10,9 @@
 </head>
 <body>
     <header>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
         <nav>
-            <ul>
+            <ul id="navMenu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="projects.html">Projects</a></li>
@@ -19,10 +21,12 @@
             <a href="path/to/your/Hemant's Resume.pdf" class="resume-button" download>Download Resume</a>
         </nav>
     </header>
-    <main id="main-content">
 
+    <main id="main-content">
+        
     <section id="privacy">
         <div class="privacy-content">
+           
             <h1>Privacy Policy</h1>
 
             <h2>1. Introduction</h2>
